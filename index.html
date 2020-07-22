@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>黑魔纹</title>
+  <style>
+    :root{
+      --lineColor: #b983b0;
+    }
+
+    html,body{width: 100%;height: 100%;background: #000;overflow: hidden;}
+    html,body,div{margin: 0;padding: 0;box-sizing: border-box;}
+
+    @keyframes roll{
+      from {
+        transform: rotate(0deg);
+      }
+      to{
+        transform: rotate(360deg); 
+      }
+    }
+
+    .main{
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -200px;
+      margin-top: -200px;
+
+      animation-name: roll;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-fill-mode: all;
+
+      filter: drop-shadow(2px 2px 1px var(--lineColor));
+    }
+
+    @media (max-width: 768px){
+      .main{
+        width: 90vw;
+        height: 90vw;
+        margin-left: -45vw;
+        margin-top: -45vw;
+      }
+    }
+
+
+    .square,.centerCircle{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .outCircle{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .centerCircle{
+      width: 66.6%;
+      height: 66.6%;
+    }
+
+    .circle,.square{
+      width: 33.3%;
+      height: 33.3%;
+    }
+
+    .circle{
+      position: absolute;
+      top: 0;
+      left: 33.35%;
+      transform-origin: 50% 150%;
+    }
+
+    .circle2{
+      transform: rotate(60deg);
+    }
+    .circle3{
+      transform: rotate(120deg);
+    }
+    .circle4{
+      transform: rotate(180deg);
+    }
+    .circle5{
+      transform: rotate(240deg);
+    }
+    .circle6{
+      transform: rotate(300deg);
+    }
+
+    .circle,.outCircle,.centerCircle{
+      border-radius: 50%;
+    }
+
+    @keyframes shadow{
+      from {
+        box-shadow: 0 0 5px 0px var(--lineColor);
+      }
+      to{
+        box-shadow: 0 0 15px 0px var(--lineColor);
+      }
+    }
+
+    .outCircle,.square,.centerCircle,.circle,.dot{
+      border: 1px solid #fff;
+      box-shadow: 0 0 15px 0px var(--lineColor);
+      animation-name: shadow;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-direction: alternate;
+    }
+
+    .square2{
+      width: 47%;
+      height: 47%;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+
+    .triangle{
+      position: absolute;
+      top: -1%;
+      left: 45%;
+      width: 10%;
+      height: 10%;
+      border-bottom: 1px solid var(--lineColor);
+
+      transform-origin: center 510%;
+    }
+    .triangle:before,.triangle:after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid var(--lineColor);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .triangle:before{
+      transform-origin: left bottom;
+      transform: rotate(-60deg);
+    }
+    .triangle:after{
+      transform-origin: right bottom;
+      transform: rotate(60deg);
+    }
+
+    .triangle1{
+      transform: rotate(30deg);
+    }
+    .triangle2{
+      transform: rotate(90deg);
+    }
+    .triangle3{
+      transform: rotate(150deg);
+    }
+    .triangle4{
+      transform: rotate(210deg);
+    }
+    .triangle5{
+      transform: rotate(270deg);
+    }
+    .triangle6{
+      transform: rotate(330deg);
+    }
+    .dot{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 0px var(--lineColor);
+      transform: translate(-50%,0);
+    }
+  </style>
+</head>
+<body>
+  <!-- <audio src="bgm.mp3" style="display: none" autoplay loop></audio> -->
+  <div class="main">
+    <div class="outCircle">
+      <div class="square"></div>
+      <div class="square square2"></div>
+      <div class="centerCircle"></div>
+
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+      <div class="circle circle4"></div>
+      <div class="circle circle5"></div>
+      <div class="circle circle6"></div>
+
+      <div class="triangle triangle1"><span class="dot"></span></div>
+      <div class="triangle triangle2"><span class="dot"></span></div>
+      <div class="triangle triangle3"><span class="dot"></span></div>
+      <div class="triangle triangle4"><span class="dot"></span></div>
+      <div class="triangle triangle5"><span class="dot"></span></div>
+      <div class="triangle triangle6"><span class="dot"></span></div>
+    </div>
+  </div>
+</body>
+</html>
